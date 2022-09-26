@@ -1,0 +1,33 @@
+<div>
+  <h1>Item</h1>
+  <form [formGroup]="itemForm" (ngSubmit)="submitListItem()">
+    <table>
+      <tr>
+        <td>Name:</td>
+        <input type="text" formControlName="name" />
+      </tr>
+      <tr>
+        <td>Unit price:</td>
+        <td><input type="number" formControlName="unitPrice" /></td>
+      </tr>
+      <tr>
+        <td>Quantity</td>
+        <td>
+          <input
+            type="number"
+            min="1"
+            max="10"
+            value="0"
+            formControlName="quantity"
+            [ngClass]="myStyle"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button type="submit" [disabled]="itemForm.invalid">Add</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
